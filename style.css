@@ -657,7 +657,10 @@
     }
 
     
-
+/* --------------set input color in text area----------- */
+#about form input, #msg{
+    color: var(--text);
+}
 
 
 

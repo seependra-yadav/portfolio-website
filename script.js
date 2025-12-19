@@ -38,3 +38,6 @@
             });
         });
 
+ document.getElementById("contact-btn").addEventListener("click", function () {
+    document.getElementById("contact-success").style.display = "block";
+  });
