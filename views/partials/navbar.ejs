@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="colors-nav">
+    <div class="red"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+  </div>
+  <div class="nav-btn">
+    <div class="nav-btn-p1"><a href="/" class="<%= activeRoute === '/' ? 'active' : '' %>">Home</a></div>
+    <div class="nav-btn-p1"><a href="/about" class="<%= activeRoute === '/about' ? 'active' : '' %>">About</a></div>
+    <div class="nav-btn-p1"><a href="/projects" class="<%= activeRoute === '/projects' ? 'active' : '' %>">Projects</a></div>
+    <div class="nav-btn-p1"><a href="/contact" class="<%= activeRoute === '/contact' ? 'active' : '' %>">Contact</a></div>
+  </div>
+  <div class="incognito"><button id="theme-toggle" type="button">Theme</button></div>
+</nav>

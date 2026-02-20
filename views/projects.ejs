@@ -1,0 +1,52 @@
+<%- include("partials/head", { pageTitle }) %>
+<%- include("partials/navbar", { activeRoute }) %>
+
+<section class="section sec-1 active" id="project">
+  <h2>Projects</h2>
+  <hr />
+
+  <div class="project-grid">
+    <article class="project-card">
+      <div class="project-tittle">Portfolio Website</div>
+      <div class="project-p">
+        A personal portfolio website that highlights projects and skills through a clean interface, responsive layout,
+        and structured front-end development.
+      </div>
+      <div class="tech-stack">
+        <span class="tech-items">HTML5</span>
+        <span class="tech-items">CSS3</span>
+        <span class="tech-items">JavaScript (ES6)</span>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-tittle">Smart Job Application Tracker</div>
+      <div class="project-p">
+        Built a full-stack job application tracker with authentication, resume upload, analytics dashboard, and follow-up reminders.
+      </div>
+      <div class="tech-stack">
+        <span class="tech-items">React</span>
+        <span class="tech-items">Tailwind</span>
+        <span class="tech-items">Node</span>
+        <span class="tech-items">Express</span>
+        <span class="tech-items">MongoDB</span>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-tittle">Multi-Vendor E-Commerce</div>
+      <div class="project-p">
+        Developed a scalable MERN-based multi-vendor e-commerce platform with admin controls, seller management, and payment integration.
+      </div>
+      <div class="tech-stack">
+        <span class="tech-items">React</span>
+        <span class="tech-items">Redux Toolkit</span>
+        <span class="tech-items">Node</span>
+        <span class="tech-items">Express</span>
+        <span class="tech-items">MongoDB</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

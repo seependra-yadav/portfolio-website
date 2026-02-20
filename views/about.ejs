@@ -1,0 +1,44 @@
+<%- include("partials/head", { pageTitle }) %>
+<%- include("partials/navbar", { activeRoute }) %>
+
+<section class="section sec-1 active" id="about">
+  <h2>About Me</h2>
+  <hr />
+
+  <div class="about-intro">
+    <p class="about-p1">
+      I am a software developer with a strong foundation in full stack development, problem solving, and core computer science concepts.
+      I focus on building reliable, maintainable, and scalable applications, following structured development practices and clean code principles.
+    </p>
+    <p class="about-p1">
+      I approach software engineering with a long-term professional mindset, aiming to grow into a developer who understands not only implementation,
+      but also design decisions, system behavior, and performance considerations.
+    </p>
+    <p class="about-p1">
+      My ambition is to work in a collaborative engineering environment where I can contribute to meaningful products, learn from experienced engineers,
+      and steadily take on greater technical responsibility.
+    </p>
+  </div>
+
+  <h3 class="about-h3">Skills</h3>
+  <div class="skills">
+    <strong style="grid-column: 1 / -1;">Programming Languages</strong>
+    <span class="skill-box">Java</span>
+    <span class="skill-box">JavaScript</span>
+    <span class="skill-box">Python</span>
+
+    <strong style="grid-column: 1 / -1;">Web Technologies</strong>
+    <span class="skill-box">HTML</span>
+    <span class="skill-box">CSS</span>
+    <span class="skill-box">React</span>
+    <span class="skill-box">Tailwind</span>
+
+    <strong style="grid-column: 1 / -1;">Backend / Database</strong>
+    <span class="skill-box">Node.js</span>
+    <span class="skill-box">Express</span>
+    <span class="skill-box">MongoDB</span>
+    <span class="skill-box">SQL</span>
+  </div>
+</section>
+
+<%- include("partials/footer") %>
