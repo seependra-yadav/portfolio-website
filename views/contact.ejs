@@ -23,6 +23,7 @@
     <button id="contact-btn" type="submit" <%= formspreeEndpoint ? '' : 'disabled' %>>
       Send
     </button>
+    <p role="status" id="contact-status" hidden></p>
 
     <p role="alert" id="contact-success" hidden></p>
 
@@ -41,14 +42,20 @@
 
     const successEl = document.getElementById("contact-success");
     const errorEl = document.getElementById("contact-error");
+    const statusEl = document.getElementById("contact-status");
     const submitBtn = document.getElementById("contact-btn");
+    const defaultBtnText = submitBtn.textContent.trim();
 
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
 
       successEl.hidden = true;
       errorEl.hidden = true;
+      statusEl.hidden = false;
+      statusEl.textContent = "Sending your message...";
+      form.setAttribute("aria-busy", "true");
       submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
 
       try {
         const response = await fetch(form.action, {
@@ -62,13 +69,17 @@
         }
 
         form.reset();
-        successEl.textContent = "Thanks. Your message has been sent.";
+        successEl.textContent = "Thank you for reaching out. I will get back to you shortly.";
         successEl.hidden = false;
+        statusEl.hidden = true;
       } catch (error) {
         errorEl.textContent = "Unable to send message right now. Please try again later.";
         errorEl.hidden = false;
+        statusEl.hidden = true;
       } finally {
+        form.removeAttribute("aria-busy");
         submitBtn.disabled = false;
+        submitBtn.textContent = defaultBtnText;
       }
     });
   })();

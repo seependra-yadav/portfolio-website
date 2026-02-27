@@ -19,7 +19,10 @@ app.use("/", mainRoutes);
 app.use((req, res) => {
   res.status(404).render("404", {
     pageTitle: "Page Not Found",
-    activeRoute: ""
+    activeRoute: "",
+    metaDescription: "The page you are looking for does not exist.",
+    canonicalUrl: "",
+    ogImage: ""
   });
 });
 
