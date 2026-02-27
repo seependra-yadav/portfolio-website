@@ -1,7 +1,5 @@
 const toggleBtn = document.getElementById("theme-toggle");
 const particleCanvas = document.getElementById("particle-canvas");
-const cursorDot = document.querySelector(".cursor-dot");
-const cursorRing = document.querySelector(".cursor-ring");
 
 if (localStorage.getItem("theme") === "light") {
   document.documentElement.classList.add("light");
@@ -86,28 +84,4 @@ if (particleCanvas) {
 
   draw();
   window.addEventListener("resize", resize);
-}
-
-if (cursorDot && cursorRing && window.matchMedia("(pointer: fine)").matches) {
-  let ringX = 0;
-  let ringY = 0;
-
-  const moveCursor = (event) => {
-    const { clientX, clientY } = event;
-    cursorDot.style.transform = `translate(${clientX}px, ${clientY}px)`;
-
-    ringX += (clientX - ringX) * 0.2;
-    ringY += (clientY - ringY) * 0.2;
-    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
-  };
-
-  window.addEventListener("mousemove", moveCursor);
-
-  document.querySelectorAll("a, button, input, textarea").forEach((node) => {
-    node.addEventListener("mouseenter", () => cursorRing.classList.add("cursor-ring-grow"));
-    node.addEventListener("mouseleave", () => cursorRing.classList.remove("cursor-ring-grow"));
-  });
-} else {
-  if (cursorDot) cursorDot.style.display = "none";
-  if (cursorRing) cursorRing.style.display = "none";
 }

@@ -2,6 +2,17 @@ const express = require("express");
 
 const router = express.Router();
 
+const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT || "";
+
+const renderContactPage = (res, { errorMessage = "" } = {}) => {
+  res.render("contact", {
+    pageTitle: "Contact | Seependra Singh",
+    activeRoute: "/contact",
+    errorMessage,
+    formspreeEndpoint: FORMSPREE_ENDPOINT
+  });
+};
+
 router.get("/", (req, res) => {
   res.render("home", {
     pageTitle: "Home | Seependra Singh",
@@ -24,23 +35,10 @@ router.get("/projects", (req, res) => {
 });
 
 router.get("/contact", (req, res) => {
-  res.render("contact", {
-    pageTitle: "Contact | Seependra Singh",
-    activeRoute: "/contact",
-    successMessage: ""
-  });
-});
-
-router.post("/contact", (req, res) => {
-  const { name, email, message } = req.body;
-  const hasRequiredFields = name && email && message;
-
-  res.render("contact", {
-    pageTitle: "Contact | Seependra Singh",
-    activeRoute: "/contact",
-    successMessage: hasRequiredFields
-      ? "Thank you for your message! I will get back to you soon."
-      : "Please fill all required fields."
+  renderContactPage(res, {
+    errorMessage: FORMSPREE_ENDPOINT
+      ? ""
+      : "Contact form is not configured yet. Add FORMSPREE_ENDPOINT in .env."
   });
 });
 
