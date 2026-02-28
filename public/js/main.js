@@ -13,10 +13,9 @@ if (toggleBtn) {
   });
 }
 
-const revealTargets = document.querySelectorAll(".project-card, .skill-box, .about-p1, form, .quick-links a, .main-section img, .main-section h1, .main-section p");
-revealTargets.forEach((el, index) => {
+const revealTargets = document.querySelectorAll(".skill-box, .about-p1, form, .quick-links a, .main-section img, .main-section h1, .main-section p");
+revealTargets.forEach((el) => {
   el.classList.add("reveal");
-  el.style.transitionDelay = `${Math.min(index * 50, 320)}ms`;
 });
 
 const observer = new IntersectionObserver(

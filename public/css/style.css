@@ -530,7 +530,7 @@ hr {
   background: rgba(59, 168, 255, 0.12);
   position: relative;
   overflow: hidden;
-  animation: pulseBadge 2.8s ease-in-out infinite;
+  animation: none;
 }
 
 .tech-items::after {
@@ -542,7 +542,7 @@ hr {
   height: 120%;
   transform: rotate(22deg);
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shine 3s ease-in-out infinite;
+  animation: none;
 }
 
 .tech-stack .tech-items:nth-child(2) {
@@ -741,13 +741,13 @@ textarea {
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px) scale(0.98);
-  transition: opacity 0.5s ease, transform 0.55s ease;
+  transform: translateY(10px);
+  transition: opacity 0.32s ease-out, transform 0.32s ease-out;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 @keyframes floatIn {
@@ -789,6 +789,14 @@ textarea {
   60%,
   100% {
     left: 160%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
 
