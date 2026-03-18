@@ -12,8 +12,8 @@
     "express",
     "nodejs"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Seependra Singh Yadav",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^17.3.1",
     "ejs": "^3.1.10",
