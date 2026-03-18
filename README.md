@@ -98,4 +98,4 @@ Then open `http://localhost:3000` in your browser.
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-Made with ❤️ by seependra singh
+Made with &#10084;&#65039; by seependra singh
